@@ -1,14 +1,14 @@
 /*
  * @Author: your name
  * @Date: 2021-02-04 13:50:25
- * @LastEditTime: 2021-02-07 10:34:27
+ * @LastEditTime: 2021-02-19 11:21:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-app\src\views\login\index.js
  */
-import React from 'react';
+import React, {Component} from 'react';
 // 有状态组件
-export default class Login extends React.Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {}
