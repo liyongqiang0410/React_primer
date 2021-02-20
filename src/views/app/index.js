@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-04 13:33:04
- * @LastEditTime: 2021-02-20 09:49:44
+ * @LastEditTime: 2021-02-20 13:59:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-app\src\views\layout\index.js
@@ -14,6 +14,7 @@ import MyLayout from '../layout/index'
 import EventDealWith from '../eventDealWith/index'
 import Form from '../form/index'
 import Todolist from '../todolist/index'
+import Lift from '../lifeCircle/index'
 const createBrowserHistory = require('history').createBrowserHistory;
 const customHistory = createBrowserHistory();
 
@@ -28,6 +29,7 @@ export default class App extends React.Component {
           <Route path='/eventDealWith' component={EventDealWith} />
           <Route path='/form' component={Form} />
           <Route path='/todolist' component={Todolist} />
+          <Route path='/lift' component={Lift} />
         </div>
       </Router>
     )
