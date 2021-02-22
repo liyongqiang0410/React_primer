@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-02-04 13:33:04
- * @LastEditTime: 2021-02-20 17:29:13
+ * @LastEditTime: 2021-02-22 11:01:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-app\src\views\layout\index.js
@@ -16,6 +16,7 @@ import Form from '../form/index'
 import Todolist from '../todolist/index'
 import Lift from '../lifeCircle/index'
 import ContextCom from '../context/context'
+import IndexContext from '../context/canonicalForm/index'
 const createBrowserHistory = require('history').createBrowserHistory;
 const customHistory = createBrowserHistory();
 
@@ -32,6 +33,7 @@ export default class App extends React.Component {
           <Route path='/todolist' component={Todolist} />
           <Route path='/lift' component={Lift} />
           <Route path='/context' component={ContextCom} />
+          <Route path='/indexContext' component={IndexContext} />
         </div>
       </Router>
     )
