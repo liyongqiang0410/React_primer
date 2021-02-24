@@ -17,6 +17,10 @@ import Todolist from '../todolist/index'
 import Lift from '../lifeCircle/index'
 import ContextCom from '../context/context'
 import IndexContext from '../context/canonicalForm/index'
+import HOC from '../higherOrderComponents/Index'
+import HocDecorator from '../higherOrderComponents/hocDecorator/Index'
+import Portals from '../portals'
+
 const createBrowserHistory = require('history').createBrowserHistory;
 const customHistory = createBrowserHistory();
 
@@ -24,7 +28,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Router history={customHistory}>
-        <div className='App' style={{ padding: '20px' }}>
+        <>
           <Route exact path='/' component={MyLayout} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
@@ -34,7 +38,10 @@ export default class App extends React.Component {
           <Route path='/lift' component={Lift} />
           <Route path='/context' component={ContextCom} />
           <Route path='/indexContext' component={IndexContext} />
-        </div>
+          <Route path="/hoc" component={HOC} />
+          <Route path='/hocDecorator' component={HocDecorator} />
+          <Route path='/portals' component={Portals} />
+        </>
       </Router>
     )
   }

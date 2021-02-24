@@ -1,3 +1,11 @@
 {
-  "plugins": ["transform-runtime", ["import", { "libraryName": "antd", "style": true }]]
+  "presets": ["@babel/preset-env"],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ]
+  ]
 }

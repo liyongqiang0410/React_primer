@@ -12,6 +12,6 @@ import 'antd/dist/antd.css';
 import App from './views/app/index';
 
 ReactDOM.render(
-  <App />,
+  <App msg='hello' />,
   document.getElementById('root')
 );
