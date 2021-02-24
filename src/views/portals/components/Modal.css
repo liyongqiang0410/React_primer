@@ -1,0 +1,42 @@
+.portalsModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+}
+
+.modal_plate {
+  min-width: 300px;
+  width: 40%;
+  position: absolute;
+  top: 15vh;
+  left: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+}
+
+.modal_header {
+  height: 40px;
+  line-height: 30px;
+  padding: 10px 20px 0px 20px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+.modal_close_icon {
+  position: absolute;
+  right: 20px;
+}
+
+.modal_body {
+  padding: 15px 20px;
+}
+
+.modal_footer {
+  padding: 10px 20px;
+  text-align: right;
+}
