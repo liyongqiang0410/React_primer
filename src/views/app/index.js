@@ -20,6 +20,7 @@ import IndexContext from '../context/canonicalForm/index'
 import HOC from '../higherOrderComponents/Index'
 import HocDecorator from '../higherOrderComponents/hocDecorator/Index'
 import Portals from '../portals'
+import Redux from '../redux/Index'
 
 const createBrowserHistory = require('history').createBrowserHistory;
 const customHistory = createBrowserHistory();
@@ -41,6 +42,7 @@ export default class App extends React.Component {
           <Route path="/hoc" component={HOC} />
           <Route path='/hocDecorator' component={HocDecorator} />
           <Route path='/portals' component={Portals} />
+          <Route path='/redux' component={Redux} />
         </>
       </Router>
     )
