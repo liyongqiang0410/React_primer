@@ -44,12 +44,10 @@ export default class MyLayout extends React.Component {
       collapsed: false,
     };
   }
-
   onCollapse = (collapsed, type) => {
     console.log(collapsed, type);
     this.setState({ collapsed });
   };
-
   render() {
     const { collapsed } = this.state;
     let logo;
