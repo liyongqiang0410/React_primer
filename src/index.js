@@ -8,10 +8,13 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom'
 import 'antd/dist/antd.css';
-import App from './views/app/index';
+import Layout from './views/layout/index'
 
 ReactDOM.render(
-  <App msg='hello' />,
+  <BrowserRouter>
+    <Layout msg='hello' />
+  </BrowserRouter>,
   document.getElementById('root')
 );

@@ -10,7 +10,7 @@ import React from 'react';
 import { Router, Route } from 'react-router';
 import Login from '../login/index'
 import Register from '../register/index'
-import MyLayout from '../layout/index'
+// import MyLayout from '../layout/index'
 import EventDealWith from '../eventDealWith/index'
 import Form from '../form/index'
 import Todolist from '../todolist/index'
@@ -21,6 +21,7 @@ import HOC from '../higherOrderComponents/Index'
 import HocDecorator from '../higherOrderComponents/hocDecorator/Index'
 import Portals from '../portals'
 import Redux from '../redux/Index'
+import ReduxReact from '../reduxDemo/Index'
 
 const createBrowserHistory = require('history').createBrowserHistory;
 const customHistory = createBrowserHistory();
@@ -30,7 +31,7 @@ export default class App extends React.Component {
     return (
       <Router history={customHistory}>
         <>
-          <Route exact path='/' component={MyLayout} />
+          {/* <Route exact path='/' component={MyLayout} /> */}
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
           <Route path='/eventDealWith' component={EventDealWith} />
@@ -43,6 +44,7 @@ export default class App extends React.Component {
           <Route path='/hocDecorator' component={HocDecorator} />
           <Route path='/portals' component={Portals} />
           <Route path='/redux' component={Redux} />
+          <Route path='/reduxReact' component={ReduxReact} />
         </>
       </Router>
     )

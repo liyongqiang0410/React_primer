@@ -7,7 +7,8 @@
  * @FilePath: \react-app\src\views\layout\index.js
  */
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import App from '../'
+import { Route, Link } from 'react-router-dom'
 import './index.css'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
@@ -18,6 +19,20 @@ import {
   UserOutlined,
   ChromeOutlined
 } from '@ant-design/icons';
+
+import Login from '../login/index'
+import Register from '../register/index'
+import EventDealWith from '../eventDealWith/index'
+import Form from '../form/index'
+import Todolist from '../todolist/index'
+import Lift from '../lifeCircle/index'
+import ContextCom from '../context/context'
+import IndexContext from '../context/canonicalForm/index'
+import HOC from '../higherOrderComponents/Index'
+import HocDecorator from '../higherOrderComponents/hocDecorator/Index'
+import Portals from '../portals'
+import Redux from '../redux/Index'
+import ReduxReact from '../reduxDemo/Index'
 
 const { Header, Content, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -30,9 +45,8 @@ export default class MyLayout extends React.Component {
     };
   }
 
-
-  onCollapse = collapsed => {
-    console.log(collapsed);
+  onCollapse = (collapsed, type) => {
+    console.log(collapsed, type);
     this.setState({ collapsed });
   };
 
@@ -50,7 +64,7 @@ export default class MyLayout extends React.Component {
       logo = (<div style={style}><ChromeOutlined style={{ fontSize: '32px', color: '#fff' }} /></div>)
     }
     return (
-      <Layout style={{ minHeight: '100vh' }}>
+      <Layout style={{ minHeight: '100vh' }} >
         <Sider collapsible collapsed={collapsed} onCollapse={this.onCollapse}>
           {logo}
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
@@ -58,19 +72,46 @@ export default class MyLayout extends React.Component {
               <Link to="/login">首页</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Option 2
+              <Link to='/form'>表单</Link>
             </Menu.Item>
             <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
+              <Menu.Item key="3">
+                <Link to="/eventDealWith">事件处理</Link>
+              </Menu.Item>
+              <Menu.Item key="4">
+                <Link to="/todolist">列表</Link>
+              </Menu.Item>
+              <Menu.Item key="5">
+                <Link to="/lift">生命周期</Link>
+              </Menu.Item>
             </SubMenu>
             <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
+              <Menu.Item key="6">
+                <Link to="/context">状态上下文</Link>
+              </Menu.Item>
+              {/* <Menu.Item key="8">
+                <Link to="/indexContext">indexContext</Link>
+              </Menu.Item> */}
             </SubMenu>
-            <Menu.Item key="9" icon={<FileOutlined />}>
-              Files
+            <SubMenu key="sub3" icon={<TeamOutlined />} title="details">
+              <Menu.Item key="9">
+                <Link to="/hoc">hoc</Link>
+              </Menu.Item>
+              <Menu.Item key="10">
+                <Link to="/hocDecorator">hocDecorator</Link>
+              </Menu.Item>
+              <Menu.Item key="11">
+                <Link to="/portals">portals</Link>
+              </Menu.Item>
+              <Menu.Item key="12">
+                <Link to="/redux">redux</Link>
+              </Menu.Item>
+              <Menu.Item key="13">
+                <Link to="/reduxReact">reduxReact</Link>
+              </Menu.Item>
+            </SubMenu>
+            <Menu.Item key="14" icon={<FileOutlined />}>
+              <Link to="/register">注册</Link>
             </Menu.Item>
           </Menu>
         </Sider>
@@ -82,7 +123,19 @@ export default class MyLayout extends React.Component {
               <Breadcrumb.Item>Bill</Breadcrumb.Item>
             </Breadcrumb>
             <div className="site-layout-background reactApp" style={{ padding: 24, minHeight: "calc(100vh - 64px - 54px)" }}>
-
+              <Route path='/login' component={Login}></Route>
+              <Route path='/register' component={Register} />
+              <Route path='/eventDealWith' component={EventDealWith} />
+              <Route path='/form' component={Form} />
+              <Route path='/todolist' component={Todolist} />
+              <Route path='/lift' component={Lift} />
+              <Route path='/context' component={ContextCom} />
+              <Route path='/indexContext' component={IndexContext} />
+              <Route path="/hoc" component={HOC} />
+              <Route path='/hocDecorator' component={HocDecorator} />
+              <Route path='/portals' component={Portals} />
+              <Route path='/redux' component={Redux} />
+              <Route path='/reduxReact' component={ReduxReact} />
             </div>
           </Content>
           {/* <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer> */}
